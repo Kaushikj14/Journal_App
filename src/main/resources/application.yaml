@@ -1,0 +1,57 @@
+#spring.application.name=Journal App
+##spring.data.mongodb.host = localhost
+##spring.data.mongodb.port = 27017
+#spring.data.mongodb.uri = mongodb+srv://kaushikjain06082002:4Df5l4BmQxBXKEe7@cluster0.nnmasmt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+#spring.data.mongodb.database = journaldb
+##spring.data.mongodb.username = myjournaluser
+##spring.data.mongodb.password = mypassword
+#spring.data.mongodb.auto-index-creation  = true
+##debug=true
+
+spring:
+  data:
+    mongodb:
+      uri : mongodb+srv://kaushikjain06082002:4Df5l4BmQxBXKEe7@cluster0.nnmasmt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+      database: journaldb
+      auto-index-creation  : true
+  profiles:
+    active: prod
+  mail:
+#    server which handles our email services
+    host: smtp.gmail.com
+#    on which port we have to connect
+    port: 587
+    username: nobehello12@gmail.com
+    password: gfrx isrz dilt xwli
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+weather:
+  api:
+    key: 71c0a856ec5441439d8110217241208
+
+#logging:
+#  level:
+#    net:
+#      engineeringdigest:
+#        journalApp: DEBUG
+
+#logging:
+#  level:
+#    net:
+#      engineeringdigest:
+#        journalApp:
+#          service:
+#            UserService: OFF
+
+
+
+
+#server:
+#  port: 8080
+#  servlet:
+#    context-path: /journal
