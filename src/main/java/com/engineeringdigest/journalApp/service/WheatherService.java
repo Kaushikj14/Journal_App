@@ -28,15 +28,27 @@ public class WheatherService {
     @Autowired
     private AppCache appCache;
 
+    @Autowired
+    private RedisService redisService;
+
     public WheatherResponse getWheather(String city){
-//            String finalurl = appCache.APP_CACHE.get("weather_api").replace("CITY",city).replace("API_KEY",apiKey);
-        String finalurl = appCache.appCache.get(AppCache.keys.WEATHER_API.toString()).replace("<city>",city).replace("<apiKey>",apiKey);
+        WheatherResponse wheatherResponse = redisService.get("weather_of_" + city, WheatherResponse.class);
+        if(wheatherResponse!=null){
+            return wheatherResponse;
+        }else{
+            //            String finalurl = appCache.APP_CACHE.get("weather_api").replace("CITY",city).replace("API_KEY",apiKey);
+            String finalurl = appCache.appCache.get(AppCache.keys.WEATHER_API.toString()).replace("<city>",city).replace("<apiKey>",apiKey);
 //        String finalurl = appCache.appCache.get(AppCache.keys.WEATHER_API.toString()).replace(Placeholders.CITY,city).replace(Placeholders.API_KEY,apiKey);
 
-        ResponseEntity<WheatherResponse> response = restTemplate.exchange(finalurl, HttpMethod.GET, null, WheatherResponse.class);
+            ResponseEntity<WheatherResponse> response = restTemplate.exchange(finalurl, HttpMethod.GET, null, WheatherResponse.class);
 //        response.getStatusCode();
-        WheatherResponse body = response.getBody();
-        return body;
+            WheatherResponse body = response.getBody();
+            if(body !=null){
+                redisService.set("weather_of_"+city, body, 300l);
+            }
+            return body;
+
+        }
 
 //        To send post request
 

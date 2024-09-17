@@ -11,13 +11,14 @@ import org.springframework.stereotype.Component;
 public class RedisConfig {
 
 
-        @Bean
-        public RedisTemplate redisTemplate(RedisConnectionFactory factory){
-                RedisTemplate redisTemplate = new RedisTemplate<>();
-                redisTemplate.setConnectionFactory(factory);
-                redisTemplate.setKeySerializer(new StringRedisSerializer());
-                redisTemplate.setValueSerializer(new StringRedisSerializer());
+    @Bean
+    public RedisTemplate redisTemplate(RedisConnectionFactory factory){
+        RedisTemplate redisTemplate = new RedisTemplate<>();
+        redisTemplate.setConnectionFactory(factory);
 
-                return redisTemplate;
-        }
+        redisTemplate.setKeySerializer(new StringRedisSerializer());
+        redisTemplate.setValueSerializer(new StringRedisSerializer());
+
+        return redisTemplate;
+    }
 }
