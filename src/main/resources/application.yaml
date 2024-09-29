@@ -1,7 +1,7 @@
 #spring.application.name=Journal App
 ##spring.data.mongodb.host = localhost
 ##spring.data.mongodb.port = 27017
-#spring.data.mongodb.uri = mongodb+srv://kaushikjain06082002:4Df5l4BmQxBXKEe7@cluster0.nnmasmt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+#spring.data.mongodb.uri = 
 #spring.data.mongodb.database = journaldb
 ##spring.data.mongodb.username = myjournaluser
 ##spring.data.mongodb.password = mypassword
@@ -17,11 +17,11 @@ spring:
 #    port: 6379
      host: redis-19783.c305.ap-south-1-1.ec2.redns.redis-cloud.com
      port: 19783
-     password: rxi9Af5yvwldaNjUpfcxJJNlqWGYSXbZ
-#     uri: redis://default:rxi9Af5yvwldaNjUpfcxJJNlqWGYSXbZ@redis-19783.c305.ap-south-1-1.ec2.redns.redis-cloud.com:19783
+     password: redis password
+#     
   data:
     mongodb:
-      uri : mongodb+srv://kaushikjain06082002:4Df5l4BmQxBXKEe7@cluster0.nnmasmt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+      uri : mongodb url and password
       database: journaldb
       auto-index-creation  : true
   profiles:
@@ -32,7 +32,7 @@ spring:
 #    on which port we have to connect
     port: 587
     username: nobehello12@gmail.com
-    password: gfrx isrz dilt xwli
+    password: password from google service
     properties:
       mail:
         smtp:
@@ -44,7 +44,7 @@ spring:
 
 weather:
   api:
-    key: 71c0a856ec5441439d8110217241208
+    key: any value(66161616161)
 
 
 #logging:
