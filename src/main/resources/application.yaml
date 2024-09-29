@@ -8,10 +8,17 @@
 #spring.data.mongodb.auto-index-creation  = true
 ##debug=true
 
+
 spring:
+  main:
+    allow-circular-references: true
   redis:
-    host: localhost
-    port: 6379
+#    host: localhost
+#    port: 6379
+     host: redis-19783.c305.ap-south-1-1.ec2.redns.redis-cloud.com
+     port: 19783
+     password: rxi9Af5yvwldaNjUpfcxJJNlqWGYSXbZ
+#     uri: redis://default:rxi9Af5yvwldaNjUpfcxJJNlqWGYSXbZ@redis-19783.c305.ap-south-1-1.ec2.redns.redis-cloud.com:19783
   data:
     mongodb:
       uri : mongodb+srv://kaushikjain06082002:4Df5l4BmQxBXKEe7@cluster0.nnmasmt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
@@ -33,9 +40,12 @@ spring:
           starttls:
             enable: true
 
+
+
 weather:
   api:
     key: 71c0a856ec5441439d8110217241208
+
 
 #logging:
 #  level:
